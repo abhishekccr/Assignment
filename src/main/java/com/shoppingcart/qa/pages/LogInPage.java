@@ -3,49 +3,65 @@ package com.shoppingcart.qa.pages;
 
 import java.io.IOException;
 
-
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.shoppingcart.qa.base.TestBase;
 
-public class SignInPage  extends TestBase {
+public class LogInPage extends TestBase   {
 	
 	
 	
 	@FindBy(xpath="//a[normalize-space()='Sign in']")
-	WebElement signin;
+	WebElement signInButton;
 	
-	@FindBy(xpath = "//input[@id='email']")
+	
+	
+	@FindBy(id="email")
 	WebElement email;
 	
-	@FindBy(xpath = "//input[@id='passwd']")
+	
+	
+	@FindBy(id="passwd")
 	WebElement password;
 	
-	@FindBy(xpath="//button[@id='SubmitLogin']")
-	WebElement submit;
 	
-	public SignInPage()
+	
+	@FindBy(id="SubmitLogin")
+	WebElement submitLogin;
+	
+	//Initializing the Page Objects
+	
+	public LogInPage()
 	{
-	    PageFactory.initElements(driver, this);
+	     
+		PageFactory.initElements(driver, this);
 	}
 	
-	//Method
+	//Methods
 	
-	
-	
+/*
 	public SignInPage signinlink() throws IOException
 	{
-		signin.click();
-		return new SignInPage();
+		signInButton.click();
+		//return new SignInPage();
+	}
+	*/
+	
+	public String validateLoginPageTitle()
+	{
+		
+		return driver.getTitle();
 	}
 	
 	public HomePage signin(String em , String pwd)
 	{
+		signInButton.click();
 		email.sendKeys(em);
 		password.sendKeys(pwd);
-		submit.click();
+		submitLogin.click();
 		
 		return new HomePage();
 		

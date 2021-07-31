@@ -37,35 +37,36 @@ public class TestBase {
 			
 		}
 	
+		
 	    public static void  initialise() throws IOException
 	    {
 	    	
 	    	
-	    	   String browsername =  prop.getProperty("browser");
+	    	  String browsername =  prop.getProperty("browser");
 	    	   
-	    	   if (browsername.equals("Chrome"))
-	   		{
+	       if (browsername.equals("Chrome"))
+	   	{
 	   			
 	    		   System.setProperty("webdriver.chrome.driver", "/Users/abhishekchaudhary/Downloads/chromedriver 2");
-	   			   driver= new ChromeDriver();
+	   		   driver= new ChromeDriver();
 	   			
-	   		}
+	   	}
 	    	   
-	    	   else if (browsername.equals("Firefox"))
+	   	   else if (browsername.equals("Firefox"))
 	   		{
 	    		   System.setProperty("webdriver.gecko.driver", "/Users/abhishekchaudhary/Downloads/geckodriver");
 	   			   driver= new FirefoxDriver();
 	   			   
 	   			
 	   		}
-	    	   
+	    	  
 	    	   driver.manage().window().maximize();
 	    	   driver.manage().deleteAllCookies();
 	    	   driver.get(prop.getProperty("url"));
 	    	   
 	    	   driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS); 
 	    		
-	    	// return driver;
+	   
 	    	    
 	    }
 }

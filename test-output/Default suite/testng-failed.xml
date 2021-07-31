@@ -6,6 +6,7 @@
       <class name="com.shoppingcart.qa.testcases.ItemPageTest">
         <methods>
           <include name="setup"/>
+          <include name="closeBrowser"/>
           <include name="mouseaction"/>
         </methods>
       </class> <!-- com.shoppingcart.qa.testcases.ItemPageTest -->

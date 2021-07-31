@@ -1,137 +1,115 @@
 package com.shoppingcart.qa.pages;
 
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import com.shoppingcart.qa.base.TestBase;
+import com.shoppingcart.qa.util.TestUtil;
 
 public class ItemsPage extends TestBase {
 	
 	public Actions action;
-	
 	JavascriptExecutor js;
-    
+	public TestUtil util;
+
+	
 	
 	@FindBy(xpath = "//img[@title='Faded Short Sleeve T-shirts']")   // Clicking on Women link directs to selection page
-	WebElement productone;
+	WebElement firstProduct;
 	
 	@FindBy(xpath="//img[@title='Blouse']")
-	WebElement seconditem;
+	WebElement secondProduct;
 	
 	@FindBy(xpath="//*[@id=\"center_column\"]/ul/li[1]/div/div[2]/div[2]/a[1]/span")
-	WebElement AddtoCart;
+	WebElement AddtoCartFirstProduct;
 	
 	@FindBy(xpath="//span[@title='Continue shopping']//span[1]")
 	WebElement continueshopping;
+	
 	@FindBy(xpath="//*[@id=\"center_column\"]/ul/li[2]/div/div[2]/div[2]/a[1]/span")
-	WebElement addtocart2;
+	WebElement addtocartSecondProduct;
 	
 	@FindBy(css="a[title='Proceed to checkout'] span")
-	WebElement proceed;
+	WebElement proceedToCheckOut;
 	
 	@FindBy(css="a[class='button btn btn-default standard-checkout button-medium'] span")
-	WebElement summaryproceed;
+	WebElement proceedFromSummary;
 	
 	@FindBy(css="button[name='processAddress'] span")
-	WebElement addressproceed;
+	WebElement proceedFromAddress;
 	
 	@FindBy(xpath="//input[@id='cgv']")
 	WebElement shippingcheckbox;
 	
 	@FindBy(css="button[name='processCarrier'] span")
-	WebElement shippingproceed;
+	WebElement proceedFromshipping;
 	
 	@FindBy(xpath="//a[@title='Pay by bank wire']")
-	WebElement paybank;
+	WebElement payBank;
 	
 	@FindBy(css="button[class='button btn btn-default button-medium'] span")
-	WebElement confirmorder;
+	WebElement confirmOrder;
 	
 	
 	public ItemsPage()
 	{
 		PageFactory.initElements(driver, this);
 	}
-
 	
-	 public static void mousehover(WebDriver driver , WebElement element)
-	   {
-		   Actions a = new Actions(driver);
-		   a.moveToElement(element).perform();
-	   }
+	
 	
 	public void AddFirstItem() throws InterruptedException
 	{
+	   // Adding the first item to the cart
+		 util = new TestUtil();
 		
-		js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,720)");
+		TestUtil.executeScrollmethod();
 		
+		TestUtil.mouseHoverImage(firstProduct);
+		TestUtil.explicitWaitMethod(AddtoCartFirstProduct);
+	   
 		
-	
-		 Thread.sleep(2000);
-		
-		action = new Actions(driver);
-		
-  
-		
-	 action.moveToElement(productone).perform();
+		TestUtil.mouseHoverImage(AddtoCartFirstProduct);
+		TestUtil.clickImageElement(AddtoCartFirstProduct);
 		
 		
-		//WebElement cart = driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[1]/div/div[2]/div[2]/a[1]/span"));
-		WebDriverWait wtt = new WebDriverWait(driver , 10);
-		wtt.until(ExpectedConditions.elementToBeClickable(AddtoCart));
+		TestUtil.explicitWaitMethod(continueshopping);
+		TestUtil.clickImageElement(continueshopping);
 		
-		action.moveToElement(AddtoCart).click().perform();
+		//Adding the second item to the cart
 		
-		//WebElement continueshopping = driver.findElement(By.xpath("//span[@title='Continue shopping']//span[1]"));
-		WebDriverWait wait = new WebDriverWait(driver , 10);
-		wtt.until(ExpectedConditions.elementToBeClickable(continueshopping));
+		TestUtil.mouseHoverImage(secondProduct);
+		TestUtil.explicitWaitMethod(addtocartSecondProduct);
+	   
 		
-		action.moveToElement(continueshopping).click().perform();
-		
-		
-	}
-	
-	public void AddSecondItem() throws InterruptedException
-	{
-		
-		//action = new Actions(driver);
-		
-		//action.moveToElement(seconditem).perform();
+		TestUtil.mouseHoverImage(addtocartSecondProduct);
+		TestUtil.clickImageElement(addtocartSecondProduct);
 		
 		
-		WebDriverWait wtt = new WebDriverWait(driver , 12);
-		wtt.until(ExpectedConditions.elementToBeClickable(addtocart2));
-		
-		action.moveToElement(addtocart2).click().perform();
 		
 		
-		//WebElement checkout = driver.findElement(By.cssSelector("a[title='Proceed to checkout'] span"));
-		 js = (JavascriptExecutor) driver;
-		 js.executeScript("arguments[0].click()", proceed);
-	    
-		
+		TestUtil.explicitWaitMethod(proceedToCheckOut);
+		TestUtil.clickImageElement(proceedToCheckOut);
 		
 	}
+	
 	
 	public  void checkout() throws InterruptedException
 	{
-		summaryproceed.click();
-		 addressproceed.click();
-		// wtt = new WebDriverWait(driver, 5);
-		// wtt.until(ExpectedConditions.elementToBeClickable(shippingcheckbox));
-		 Thread.sleep(2000);
+		proceedFromSummary.click();
+		proceedFromAddress.click();
+		
+		Thread.sleep(2000);
 		 shippingcheckbox.click();
-		 shippingproceed.click();
-		 paybank.click();
-		 confirmorder.click();
+		 proceedFromshipping.click();
+		 payBank.click();
+		 confirmOrder.click();
 		
 	}
 	

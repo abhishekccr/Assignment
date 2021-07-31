@@ -13,22 +13,34 @@ import com.shoppingcart.qa.base.TestBase;
 
 public class TestUtil extends TestBase{
 	
-/*
+    public  JavascriptExecutor  js;
+    public static Actions action;
 	
-   public static void scrollbarmethod(WebDriver driver , WebElement element)
+   public  static void executeScrollmethod()
    {
-	   JavascriptExecutor js = (JavascriptExecutor) driver;
+	   JavascriptExecutor  js = (JavascriptExecutor) driver;
 	   js.executeScript("window.scrollBy(0,720)");
-	   
-	   js.executeScript("arguments[0].ScrollIntoView(true)", element);
-	   
+	    
    }
    
-   public static void mousehover(WebDriver driver , WebElement element)
+
+  
+   public static  void mouseHoverImage(WebElement element)
    {
-	   Actions a = new Actions(driver);
-	   a.moveToElement(element).perform();
+	    action = new Actions(driver);
+	   action.moveToElement(element).perform();
    }
-   */
+   
+   public static void explicitWaitMethod(WebElement element)
+   {
+	   WebDriverWait wait = new WebDriverWait(driver , 13);
+	   wait.until(ExpectedConditions.elementToBeClickable(element));
+   }
+   
+   public static void clickImageElement(WebElement element)
+   {
+	   action.moveToElement(element).click().perform();
+   }
+   
 
 }
