@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.shoppingcart.qa.testcases.HomePageTest">
+      <class name="com.shoppingcart.qa.testcases.ItemPageTest">
         <methods>
-          <include name="clickonlink"/>
           <include name="setup"/>
+          <include name="mouseaction"/>
         </methods>
-      </class> <!-- com.shoppingcart.qa.testcases.HomePageTest -->
+      </class> <!-- com.shoppingcart.qa.testcases.ItemPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
