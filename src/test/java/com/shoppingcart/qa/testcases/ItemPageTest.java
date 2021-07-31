@@ -39,7 +39,7 @@ public class ItemPageTest extends TestBase{
 	 }
 	 
 	 @Test
-		public void mouseaction() throws InterruptedException
+		public void validateAddItemsToCart() throws InterruptedException
 		{
 			
 		    itemspage.AddProductsToCart();
