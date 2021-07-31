@@ -42,8 +42,8 @@ public class ItemPageTest extends TestBase{
 		public void mouseaction() throws InterruptedException
 		{
 			
-		    itemspage.AddFirstItem();
-			itemspage.checkout();
+		    itemspage.AddProductsToCart();
+			itemspage.placeOrder();
 			
 		}
 	 

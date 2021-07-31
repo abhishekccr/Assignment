@@ -20,7 +20,7 @@ public class ItemsPage extends TestBase {
 
 	
 	
-	@FindBy(xpath = "//img[@title='Faded Short Sleeve T-shirts']")   // Clicking on Women link directs to selection page
+	@FindBy(xpath = "//img[@title='Faded Short Sleeve T-shirts']")   
 	WebElement firstProduct;
 	
 	@FindBy(xpath="//img[@title='Blouse']")
@@ -64,7 +64,7 @@ public class ItemsPage extends TestBase {
 	
 	
 	
-	public void AddFirstItem() throws InterruptedException
+	public void AddProductsToCart() throws InterruptedException
 	{
 	   // Adding the first item to the cart
 		 util = new TestUtil();
@@ -100,7 +100,7 @@ public class ItemsPage extends TestBase {
 	}
 	
 	
-	public  void checkout() throws InterruptedException
+	public  void placeOrder() throws InterruptedException
 	{
 		proceedFromSummary.click();
 		proceedFromAddress.click();

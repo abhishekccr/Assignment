@@ -42,7 +42,7 @@ public class LogInPageTest extends TestBase {
 	   @Test
 	   public void Login() throws IOException
 	   {
-		    //spp.signinlink();
+		  
 		   loginpage.signin(prop.getProperty("emaill"), prop.getProperty("passwordd"));
 	   }
 	   
