@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="36043" started-at="2021-08-01T01:22:47Z" finished-at="2021-08-01T01:23:23Z">
+  <suite name="Default suite" duration-ms="32848" started-at="2021-08-01T02:49:27Z" finished-at="2021-08-01T02:49:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="36043" started-at="2021-08-01T01:22:47Z" finished-at="2021-08-01T01:23:23Z">
+    <test name="Default test" duration-ms="32848" started-at="2021-08-01T02:49:27Z" finished-at="2021-08-01T02:49:59Z">
       <class name="com.shoppingcart.qa.testcases.ItemPageTest">
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.shoppingcart.qa.testcases.ItemPageTest@724af044]" name="setup" is-config="true" duration-ms="19145" started-at="2021-08-01T11:22:47Z" finished-at="2021-08-01T11:23:07Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.shoppingcart.qa.testcases.ItemPageTest@59fa1d9b]" name="setup" is-config="true" duration-ms="16755" started-at="2021-08-01T12:49:27Z" finished-at="2021-08-01T12:49:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="validateAddItemsToCart()[pri:0, instance:com.shoppingcart.qa.testcases.ItemPageTest@724af044]" name="validateAddItemsToCart" duration-ms="16300" started-at="2021-08-01T11:23:07Z" finished-at="2021-08-01T11:23:23Z">
+        <test-method status="PASS" signature="validateAddItemsToCart()[pri:0, instance:com.shoppingcart.qa.testcases.ItemPageTest@59fa1d9b]" name="validateAddItemsToCart" duration-ms="15476" started-at="2021-08-01T12:49:43Z" finished-at="2021-08-01T12:49:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateAddItemsToCart -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.shoppingcart.qa.testcases.ItemPageTest@724af044]" name="closeBrowser" is-config="true" duration-ms="577" started-at="2021-08-01T11:23:23Z" finished-at="2021-08-01T11:23:23Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.shoppingcart.qa.testcases.ItemPageTest@59fa1d9b]" name="closeBrowser" is-config="true" duration-ms="603" started-at="2021-08-01T12:49:59Z" finished-at="2021-08-01T12:49:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

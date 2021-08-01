@@ -1,6 +1,7 @@
 package com.shoppingcart.qa.pages;
 
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -15,21 +16,32 @@ public class HomePage extends TestBase{
 	
 	public Actions action;
 
-	@FindBy(xpath = "//a[@title='Women']")   // Clicking on Women link directs to selection page
-	WebElement womenLink;
+	@FindBy(xpath = "//a[@title='Women']")   
+	WebElement womenSectionLink;
 
+	 // This code can be used to invoke the code from the Browser without referring to initialise() method of the base class. 
+	 /*
+	public HomePage(WebDriver driver)
+	{
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	*/
+	
+	
 	public HomePage()
 	{
 		PageFactory.initElements(driver, this);
 	}
 	
+
+	
 	public ItemsPage clickMethod() throws InterruptedException
 	{
-	womenLink.click();
+	womenSectionLink.click();
 	return new ItemsPage();
 	
-	//WebDriverWait wait = new WebDriverWait(driver,2) ; //Create utility for this in util class
-	//wait.until(ExpectedConditions.visibilityOf(wmn));
+	//return new ItemsPage(driver); // This to be used when invoking Browser without referring to initialise() method of the base class.
 	
 	}
 	

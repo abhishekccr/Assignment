@@ -2,7 +2,7 @@ package com.shoppingcart.qa.pages;
 
 
 import org.openqa.selenium.JavascriptExecutor;
-
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -58,19 +58,26 @@ public class ItemsPage extends TestBase {
 	WebElement confirmOrderBtn;
 	
 	
-	public ItemsPage()
+	 //  This to be used when invoking Browser without referring to initialise() method of the base class..
+	
+	/*
+	public ItemsPage(WebDriver driver)
 	{
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	*/
 	
 	
+	public ItemsPage()
+	{
+		
+		PageFactory.initElements(driver, this);
 	
+	}
 	public void AddProductsToCart() throws InterruptedException
 	{
 	   // Adding the first item to the cart
-		//TestUtil util = new TestUtil();
-		 
-	
 		
 		TestUtil.executeScrollmethod();
 		
