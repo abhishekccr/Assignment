@@ -1,5 +1,5 @@
 # Assignment
-Add to Cart flow using Page Object approach using the TestNG framework.
+Add to Cart flow using Page Object approach with  TestNG framework.
 
 Overview of the Approach: 
 
