@@ -16,7 +16,7 @@ public class TestUtil extends TestBase{
     public  JavascriptExecutor  js;
     public static Actions action;
 	
-   public  static void executeScrollmethod()
+   public static void executeScrollmethod()
    {
 	   JavascriptExecutor  js = (JavascriptExecutor) driver;
 	   js.executeScript("window.scrollBy(0,720)");
@@ -25,7 +25,7 @@ public class TestUtil extends TestBase{
    
 
   
-   public static  void mouseHoverImage(WebElement element)
+   public static void mouseHoverImage(WebElement element)
    {
 	    action = new Actions(driver);
 	   action.moveToElement(element).perform();

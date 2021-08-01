@@ -33,8 +33,6 @@ public class TestBase {
 				e.printStackTrace();
 			}	
 			
-			
-			
 		}
 	
 		
@@ -62,6 +60,7 @@ public class TestBase {
 	    	  
 	    	   driver.manage().window().maximize();
 	    	   driver.manage().deleteAllCookies();
+	    	   driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 	    	   driver.get(prop.getProperty("url"));
 	    	   
 	    	   driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS); 

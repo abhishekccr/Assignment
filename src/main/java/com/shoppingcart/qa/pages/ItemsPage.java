@@ -14,6 +14,7 @@ import com.shoppingcart.qa.util.TestUtil;
 
 public class ItemsPage extends TestBase {
 	
+	
 	public Actions action;
 	JavascriptExecutor js;
 	public TestUtil util;
@@ -27,34 +28,34 @@ public class ItemsPage extends TestBase {
 	WebElement secondProduct;
 	
 	@FindBy(xpath="//*[@id=\"center_column\"]/ul/li[1]/div/div[2]/div[2]/a[1]/span")
-	WebElement AddtoCartFirstProduct;
+	WebElement AddtoCartFirstProductBtn;
 	
 	@FindBy(xpath="//span[@title='Continue shopping']//span[1]")
-	WebElement continueshopping;
+	WebElement continueShoppingBtn;
 	
 	@FindBy(xpath="//*[@id=\"center_column\"]/ul/li[2]/div/div[2]/div[2]/a[1]/span")
-	WebElement addtocartSecondProduct;
+	WebElement addtocartSecondProductBtn;
 	
 	@FindBy(css="a[title='Proceed to checkout'] span")
-	WebElement proceedToCheckOut;
+	WebElement proceedToCheckOutBtn;
 	
 	@FindBy(css="a[class='button btn btn-default standard-checkout button-medium'] span")
-	WebElement proceedFromSummary;
+	WebElement proceedFromSummaryBtn;
 	
 	@FindBy(css="button[name='processAddress'] span")
-	WebElement proceedFromAddress;
+	WebElement proceedFromAddressBtn;
 	
 	@FindBy(xpath="//input[@id='cgv']")
-	WebElement shippingcheckbox;
+	WebElement shippingCheckbox;
 	
 	@FindBy(css="button[name='processCarrier'] span")
-	WebElement proceedFromshipping;
+	WebElement proceedFromshippingBtn;
 	
 	@FindBy(xpath="//a[@title='Pay by bank wire']")
 	WebElement payBank;
 	
 	@FindBy(css="button[class='button btn btn-default button-medium'] span")
-	WebElement confirmOrder;
+	WebElement confirmOrderBtn;
 	
 	
 	public ItemsPage()
@@ -67,50 +68,57 @@ public class ItemsPage extends TestBase {
 	public void AddProductsToCart() throws InterruptedException
 	{
 	   // Adding the first item to the cart
-		 util = new TestUtil();
+		//TestUtil util = new TestUtil();
+		 
+	
 		
 		TestUtil.executeScrollmethod();
 		
 		TestUtil.mouseHoverImage(firstProduct);
-		TestUtil.explicitWaitMethod(AddtoCartFirstProduct);
+		TestUtil.explicitWaitMethod(AddtoCartFirstProductBtn);
 	   
 		
-		TestUtil.mouseHoverImage(AddtoCartFirstProduct);
-		TestUtil.clickImageElement(AddtoCartFirstProduct);
+		TestUtil.mouseHoverImage(AddtoCartFirstProductBtn);
+		TestUtil.clickImageElement(AddtoCartFirstProductBtn);
 		
 		
-		TestUtil.explicitWaitMethod(continueshopping);
-		TestUtil.clickImageElement(continueshopping);
+		TestUtil.explicitWaitMethod(continueShoppingBtn);
+		TestUtil.clickImageElement(continueShoppingBtn);
 		
 		//Adding the second item to the cart
 		
 		TestUtil.mouseHoverImage(secondProduct);
-		TestUtil.explicitWaitMethod(addtocartSecondProduct);
+		TestUtil.explicitWaitMethod(addtocartSecondProductBtn);
 	   
 		
-		TestUtil.mouseHoverImage(addtocartSecondProduct);
-		TestUtil.clickImageElement(addtocartSecondProduct);
+		TestUtil.mouseHoverImage(addtocartSecondProductBtn);
+		TestUtil.clickImageElement(addtocartSecondProductBtn);
 		
 		
 		
 		
-		TestUtil.explicitWaitMethod(proceedToCheckOut);
-		TestUtil.clickImageElement(proceedToCheckOut);
+		TestUtil.explicitWaitMethod(proceedToCheckOutBtn);
+		TestUtil.clickImageElement(proceedToCheckOutBtn);
 		
 	}
 	
 	
 	public  void placeOrder() throws InterruptedException
 	{
-		proceedFromSummary.click();
-		proceedFromAddress.click();
+		proceedFromSummaryBtn.click();
+		proceedFromAddressBtn.click();
 		
-		Thread.sleep(2000);
-		 shippingcheckbox.click();
-		 proceedFromshipping.click();
+		 shippingCheckbox.click();
+		 proceedFromshippingBtn.click();
 		 payBank.click();
-		 confirmOrder.click();
+		 confirmOrderBtn.click();
 		
+	}
+	
+	public String validateConfirmOrderMessage()
+	{
+		
+		return driver.getTitle();
 	}
 	
 	
