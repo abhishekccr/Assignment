@@ -37,8 +37,10 @@ public class ItemPageTest extends TestBase{
 	 {
 		   initialise();
 		   loginpage = new LogInPage();
+		   homepage = new HomePage();
+		   itemspage = new ItemsPage();
 		   homepage = loginpage.signin(prop.getProperty("useremail"), prop.getProperty("userpassword"));
-			itemspage = homepage.clickMethod();
+		  itemspage = homepage.clickMethod();
 		   
 			/*  This to be used when invoking Browser without referring to initialise() method of the base class.
 			 
