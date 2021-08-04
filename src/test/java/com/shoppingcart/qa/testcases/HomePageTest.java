@@ -19,7 +19,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class HomePageTest extends TestBase{
 	
-	public static LogInPage signinpage;
+	public static LogInPage loginpage;
 	public static HomePage homepage;
 	public static ItemsPage itemspage;
 	
@@ -35,7 +35,8 @@ public class HomePageTest extends TestBase{
 	{
 		initialise();
 		
-		signinpage = new LogInPage();
+		loginpage = new LogInPage();
+		homepage = new HomePge();
 		
 		homepage = signinpage.signin(prop.getProperty("useremail"), prop.getProperty("userpassword"));
 	
