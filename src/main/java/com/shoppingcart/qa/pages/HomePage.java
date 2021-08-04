@@ -14,7 +14,7 @@ public class HomePage extends TestBase{
 	
 
 	
-	public Actions action;
+	
 
 	@FindBy(xpath = "//a[@title='Women']")   
 	WebElement womenSectionLink;
