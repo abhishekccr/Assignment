@@ -38,7 +38,7 @@ public class HomePageTest extends TestBase{
 		loginpage = new LogInPage();
 		homepage = new HomePge();
 		
-		homepage = signinpage.signin(prop.getProperty("useremail"), prop.getProperty("userpassword"));
+		homepage = loginpage.signin(prop.getProperty("useremail"), prop.getProperty("userpassword"));
 	
 		// This to be used when invoking Browser without referring to initialise() method of the base class..
 		   
